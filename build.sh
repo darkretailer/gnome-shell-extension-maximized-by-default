@@ -2,4 +2,4 @@
 
 rm -rf dist
 mkdir -p dist
-zip -j9 dist/gnome-shell-extension-maximized-by-default.zip src/*
+zip -j9 dist/gnome-shell-extension-verticalmax.zip src/*

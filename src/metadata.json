@@ -3,7 +3,7 @@
   "version": "1.0.0a",
   "description": "Make all windows vertical maximized on start.",
   "url": "https://github.com/darkretailer/gnome-shell-extension-verticalmax",
-  "uuid": "N/A",
+  "uuid": "gnome-shell-extension-verticalmax@darkretailer.github.com",
   "shell-version": [
     "3.32",
     "3.20.4"
