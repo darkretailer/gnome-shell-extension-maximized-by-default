@@ -1,0 +1,19 @@
+<schemalist gettext-domain="gnome-shell-extensions">
+  <schema id="org.gnome.shell.extensions.maxi"
+          path="/org/gnome/shell/extensions/maxi/">
+    <key name="vertical" type="b">
+      <default>true</default>
+      <summary>Maximize all Windows vertical</summary>
+      <description>
+        Maximize all Windows vertical
+      </description>
+    </key>
+    <key name="horizontal" type="b">
+      <default>false</default>
+      <summary>Maximize all Windows horizontal</summary>
+      <description>
+        Maximize all Windows horizontal
+      </description>
+    </key>
+  </schema>
+</schemalist>

@@ -1,11 +1,15 @@
 {
-  "name": "Vertical maximize new windows",
-  "version": "1.0.0a",
-  "description": "Make all windows vertical maximized on start",
-  "url": "https://github.com/darkretailer/gnome-shell-extension-verticalmax",
-  "uuid": "verticalmax@darkretailer.github.com",
+  "name": "Maxi",
+  "extension-id": "maxi",
+  "version": "0.1",
+  "description": "Maximize your windows vertical and/or horizontal (based on https://github.com/aXe1/gnome-shell-extension-maximized-by-default)",
+  "url": "https://github.com/darkretailer/gnome-shell-extension_maxi",
+  "uuid": "maxi@darkretailer.github.com",
+  "settings-schema": "org.gnome.shell.extensions.maxi",
+  "gettext-domain": "gnome-shell-extensions",
   "shell-version": [
-    "3.32",
-    "3.20.4"
+    "3.34",
+    "3.32"
   ]
 }
+
