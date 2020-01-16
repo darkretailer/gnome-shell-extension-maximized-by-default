@@ -39,14 +39,14 @@ class MaxiSettings extends Gtk.Grid {
         }
         
         let check = new Gtk.CheckButton({
-            label: _('maximize vertical'),
+            label: _('[⇕] maximize vertical'),
             margin_top: 6,
         });
         this._settings.bind('vertical', check, 'active', Gio.SettingsBindFlags.DEFAULT);
         this.add(check);
 
         check = new Gtk.CheckButton({
-            label: _('maximize horizontal'),
+            label: _('[⇔] maximize horizontal'),
             margin_top: 6,
         });
         this._settings.bind('horizontal', check, 'active', Gio.SettingsBindFlags.DEFAULT);
