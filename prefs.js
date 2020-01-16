@@ -18,19 +18,9 @@ class MaxiSettings extends Gtk.Grid {
     _init(params) {
         super._init(params);
 
-        this.margin = 24;
-        this.row_spacing = 6;
+        this.margin = 30;
+        this.row_spacing = 30;
         this.orientation = Gtk.Orientation.VERTICAL;
-
-        let align = new Gtk.Alignment({ left_padding: 12 });
-        this.add(align);
-
-        let grid = new Gtk.Grid({
-            orientation: Gtk.Orientation.VERTICAL,
-            row_spacing: 6,
-            column_spacing: 6,
-        });
-        align.add(grid);
 
         try {
             this._settings = ExtensionUtils.getSettings();
@@ -57,7 +47,6 @@ class MaxiSettings extends Gtk.Grid {
 function buildPrefsWidget() {
     let maxisettings = new MaxiSettings();
     maxisettings.show_all();
-
     return maxisettings;
 }
 
