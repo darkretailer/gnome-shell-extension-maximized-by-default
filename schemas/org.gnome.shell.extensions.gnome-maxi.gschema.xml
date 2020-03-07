@@ -15,5 +15,10 @@
         Maximize all Windows horizontal
       </description>
     </key>
+    <key type="as" name="blacklisted-apps">
+        <default>['org.gnome.Calculator.desktop']</default>
+        <summary>Application list</summary>
+        <description>A list of strings, each containing an application id (desktop file name)</description>
+    </key>
   </schema>
 </schemalist>
