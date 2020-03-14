@@ -47,13 +47,10 @@ class MaxiSettings extends Gtk.Grid {
         });
         this._settings.bind('horizontal', check, 'active', Gio.SettingsBindFlags.DEFAULT);
         this.add(check);
-    
 
         this._store = new Gtk.ListStore();
         this._store.set_column_types([Gio.AppInfo, GObject.TYPE_STRING, Gio.Icon]);
-
-        this._treeView = new Gtk.TreeView({ model: this._store,
-                                            hexpand: true, vexpand: true });
+        this._treeView = new Gtk.TreeView({ model: this._store, hexpand: true, vexpand: true });
         this._treeView.get_selection().set_mode(Gtk.SelectionMode.SINGLE);
 
         const appColumn = new Gtk.TreeViewColumn({ expand: true, sort_column_id: Columns.DISPLAY_NAME, title: _("Applications to be ignored:") });
@@ -71,9 +68,7 @@ class MaxiSettings extends Gtk.Grid {
         toolbar.get_style_context().add_class(Gtk.STYLE_CLASS_INLINE_TOOLBAR);
         this.add(toolbar);
 
-        const newButton = new Gtk.ToolButton({ stock_id: Gtk.STOCK_NEW,
-                                             label: _(""),
-                                             is_important: true });
+        const newButton = new Gtk.ToolButton({ stock_id: Gtk.STOCK_NEW, label: _(""), is_important: true });
         newButton.connect('clicked', this._createNew.bind(this));
         toolbar.add(newButton);
 
@@ -86,16 +81,12 @@ class MaxiSettings extends Gtk.Grid {
     }
 
     _createNew() {
-        const dialog = new Gtk.Dialog({ title: _("Application to ignore"),
-                                      transient_for: this.get_toplevel(),
-                                      modal: true });
+        const dialog = new Gtk.Dialog({ title: _("Application to ignore"), transient_for: this.get_toplevel(), modal: true });
         dialog.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL);
         dialog.add_button(_("Add"), Gtk.ResponseType.OK);
         dialog.set_default_response(Gtk.ResponseType.OK);
 
-        const grid = new Gtk.Grid({ column_spacing: 10,
-                                  row_spacing: 15,
-                                  margin: 10 });
+        const grid = new Gtk.Grid({ column_spacing: 10, row_spacing: 15, margin: 10 });
         dialog._appChooser = new Gtk.AppChooserWidget({ show_all: true });
         grid.attach(dialog._appChooser, 0, 0, 2, 1);
         dialog.get_content_area().add(grid);
@@ -120,9 +111,7 @@ class MaxiSettings extends Gtk.Grid {
             }
             let iter = this._store.append();
 
-            this._store.set(iter,
-                            [Columns.APPINFO, Columns.ICON, Columns.DISPLAY_NAME],
-                            [appInfo, appInfo.get_icon(), appInfo.get_display_name()]);
+            this._store.set(iter, [Columns.APPINFO, Columns.ICON, Columns.DISPLAY_NAME], [appInfo, appInfo.get_icon(), appInfo.get_display_name()]);
             this._changedPermitted = true;
 
             dialog.destroy();
@@ -163,9 +152,7 @@ class MaxiSettings extends Gtk.Grid {
             validItems.push(currentItems[i]);
 
             const iter = this._store.append();
-            this._store.set(iter,
-                            [Columns.APPINFO, Columns.ICON, Columns.DISPLAY_NAME],
-                            [appInfo, appInfo.get_icon(), appInfo.get_display_name()]);
+            this._store.set(iter, [Columns.APPINFO, Columns.ICON, Columns.DISPLAY_NAME], [appInfo, appInfo.get_icon(), appInfo.get_display_name()]);
         }
 
         if (validItems.length != currentItems.length) {
@@ -197,9 +184,6 @@ class MaxiSettings extends Gtk.Grid {
         currentItems.splice(index, 1);
         this._settings.set_strv("blacklisted-apps", currentItems);
     }
-    
-
-
 });
 
 function buildPrefsWidget() {
@@ -207,4 +191,3 @@ function buildPrefsWidget() {
     maxisettings.show_all();
     return maxisettings;
 }
-
