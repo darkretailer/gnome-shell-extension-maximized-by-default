@@ -11,8 +11,6 @@ function init() {
 
 function enable() {
     _windowCreatedId = global.display.connect('window-created', (d, win) => {
-        global.log("gnome-extension maxi@darkretailer.github.com: New " + win.gtk_application_id);
-
         if (! this._settings.get_strv('blacklisted-apps').includes(win.gtk_application_id + ".desktop")) {
             if (win.can_maximize()) {
                 if (_settings.get_boolean('vertical')) {
