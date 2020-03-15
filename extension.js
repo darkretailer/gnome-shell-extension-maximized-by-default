@@ -28,6 +28,5 @@ function enable() {
 
 function disable() {
     global.display.disconnect(_windowCreatedId);
-    _windowCreatedId.destroy();
     _windowCreatedId = null;
 } 
