@@ -4,7 +4,6 @@ var ExtensionUtils = imports.misc.extensionUtils;
 var _windowCreatedId;
 var _settings;
 
-var debug = false;
 
 function init() {
     _settings = ExtensionUtils.getSettings();
@@ -12,11 +11,13 @@ function init() {
 
 function enable() {
     _windowCreatedId = global.display.connect('window-created', (d, win) => {
-        if (debug) {
+        const DEBUG = _settings.get_boolean('debug');
+
+        if (DEBUG) {
             global.log("gnome-extension maxi@darkretailer.github.com: New " + win.gtk_application_id);
         }
-        
-        if (! this._settings.get_strv('blacklisted-apps').includes(win.gtk_application_id + ".desktop")) {
+
+        if (!this._settings.get_strv('blacklisted-apps').includes(win.gtk_application_id + ".desktop")) {
             if (win.can_maximize()) {
                 if (_settings.get_boolean('vertical')) {
                     win.maximize(Meta.MaximizeFlags.VERTICAL);
@@ -26,7 +27,7 @@ function enable() {
                 }
             }
         } else {
-            if (debug) {
+            if (DEBUG) {
                 global.log('gnome-extension maxi@darkretailer.github.com: "' + win.gtk_application_id + '" is blacklisted');
             }
         }
@@ -36,4 +37,4 @@ function enable() {
 function disable() {
     global.display.disconnect(_windowCreatedId);
     _windowCreatedId = null;
-} 
+}

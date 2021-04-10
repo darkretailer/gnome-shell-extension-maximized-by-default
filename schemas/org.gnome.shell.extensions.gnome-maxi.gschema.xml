@@ -1,24 +1,24 @@
 <schemalist gettext-domain="gnome-shell-extensions">
-  <schema id="org.gnome.shell.extensions.maxi"
-          path="/org/gnome/shell/extensions/maxi/">
+  <schema id="org.gnome.shell.extensions.maxi" path="/org/gnome/shell/extensions/maxi/">
+    <key name="debug" type="b">
+      <default>false</default>
+      <summary>For debugging</summary>
+      <description>Log additional information - see "journalctl -f"</description>
+    </key>
     <key name="vertical" type="b">
       <default>true</default>
       <summary>Maximize all Windows vertical</summary>
-      <description>
-        Maximize all Windows vertical
-      </description>
+      <description>Maximize all Windows vertical</description>
     </key>
     <key name="horizontal" type="b">
       <default>false</default>
       <summary>Maximize all Windows horizontal</summary>
-      <description>
-        Maximize all Windows horizontal
-      </description>
+      <description>Maximize all Windows horizontal</description>
     </key>
     <key type="as" name="blacklisted-apps">
-        <default>['org.gnome.Calculator.desktop']</default>
-        <summary>Application list</summary>
-        <description>A list of strings, each containing an application id (desktop file name)</description>
+      <default>['org.gnome.Calculator.desktop']</default>
+      <summary>Application list</summary>
+      <description>A list of strings, each containing an application id (desktop file name)</description>
     </key>
   </schema>
 </schemalist>
