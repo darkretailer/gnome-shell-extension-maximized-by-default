@@ -1,3 +1,8 @@
+# Discontinued
+I switched to KDE, so I won't be working on it anymore.
+
+BTW: Plasma has such functions embedded (via "window rules") 😉
+
 # Gnome-Extension: maxi
 
 ## Description
